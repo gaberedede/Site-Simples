@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Recebidos</title>
+    <link rel="stylesheet" href="meusite/css/estilos.css">
+    <script>
+        window.onload = function () {
+            const nome = localStorage.getItem('nome');
+            const email = localStorage.getItem('email');
+            const idade = localStorage.getItem('idade');
+
+            if (!nome && !email && !idade) {
+                document.getElementById("dadosRecebidos").innerHTML = `
+                    <p>Ainda não foram recebidos nenhum dado.</p>
+                `;
+            } else {
+                document.getElementById("dadosRecebidos").innerHTML = `
+                    <p><strong>Nome:</strong> ${nome}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Idade:</strong> ${idade}</p>
+                `;
+            }
+        };
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="form.html">Formulário</a></li>
+            <li><a href="formAction.html">Receber Dados</a></li>
+            <li><a href="about.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Dados Recebidos</h1>
+        <div id="dadosRecebidos"></div>
+    </main>
+</body>
+</html>
